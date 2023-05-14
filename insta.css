@@ -1,0 +1,289 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    background: hsl(0, 0%, 96%);
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: -99;
+}
+.container::before{
+    content: '';
+    height: 90vh;
+    width: 180px;
+    background: hsla(49, 100%, 90%, 0.3);
+    transform: translateX(-100px);
+    border-radius: 150px;
+    position: absolute;
+    z-index: -4;
+}
+.container::after{
+    content: '';
+    height: 90vh;
+    width: 380px; 
+    background: hsla(200, 83%, 90%, 0.3);
+    border-radius: 150px;
+    position: absolute;
+    transform: translateX(200px);
+    z-index: -4;
+}
+
+.blur{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: hsla(0, 0%, 96%, 0.2);
+    backdrop-filter: blur(40px);
+    z-index: -3;
+}
+
+.box{
+    width: 90%;
+    height: 80%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box::before{
+    content: '';
+    width: 42%;
+    height: 80%;
+    mix-blend-mode: multiply;
+    background: hsl(49, 100%, 60%);
+    position: absolute;
+    transform: translate(-25%, 5%);
+    border-radius: 300px;
+    z-index: -1;
+}
+.box::after{
+    content: '';
+    width: 42%;
+    height: 80%;
+    mix-blend-mode: multiply;
+    background: hsl(200, 100%, 70%);
+    transform: translate(64%, -10%);
+    position: absolute;
+    border-radius: 300px;
+    z-index: -2;
+}
+@media (min-width: 350px) and (max-width: 800px){
+    .box{
+        width: 100%;
+        height: 100%;
+    }
+}
+.main{
+    width: 100%;
+    height: 100%;
+    background: hsla(0, 0%, 100%, 0.7);
+    backdrop-filter: blur(50px);
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 1em 0 0 0;
+}
+.nav{
+    font-family: 'Clash Display', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    height: 15%;
+    /* border: 2px solid blue; */
+    align-items: center;
+    padding: 0 2em;
+    font-size: 10px;
+    font-weight: 500;
+}
+.fashion{
+    font-size: 16px;
+    font-weight: 600;
+}
+.slider{
+    display: block;
+}
+.about{
+    display: flex;
+    gap: 30px
+}
+@media (min-width: 350px) and (max-width: 800px){
+    .main{
+        gap: 10px;
+    }
+    .slider{
+        display: none;
+    }
+    .nav{
+        /* border: 2px solid red; */
+        height: 8%;
+    }
+}
+
+.grid_col{
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    grid-column-gap: 15px;
+    padding: 3em 2.5em;
+}
+
+.col{
+    height: 48vh;
+    border-radius: 5px;
+    font-family: 'General Sans', sans-serif;
+}
+
+.one{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 4em 0 0 0;
+}
+.one .text{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.one .text h1{
+    font-size: 50px;
+    font-weight: 600;
+    line-height: 1em;
+    width: 80%;
+    color: #170a22;
+    /* border: 2px solid red; */
+}
+.one .text p{
+    font-size: 12px;
+}
+
+.one button{
+    padding: 1em 5em;
+    color: #fff;
+    background: 
+    linear-gradient(99deg, hsla(356, 89%, 45%, 0.995) 39%, hsla(15, 78%, 47%, 0.998) 90%);
+    border-radius: 50px;
+    box-shadow: 1px 1px 7px hsla(356, 89%, 45%, 0.995);
+    text-shadow: 1px 1px 7px white;
+    border: none;
+    outline: transparent;
+}
+
+.two{
+    background: url(./img/bag.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: end;
+    padding: 1em;
+    /* transition: all 1s ease-in; */
+}
+
+.three{
+    background: url(./img/nike.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: end;
+    padding: 1em;
+}
+
+.four{
+    background: url(./img/cloth.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: end;
+    padding: 1em;
+}
+
+.down{
+    font-size: 20px;
+    color: white;
+    font-weight: 600;
+}
+.query{
+    transition: all 4s ease-in-out;
+}
+
+@media (min-width: 350px) and (max-width: 800px){
+    .grid_col{
+        display: grid;
+        grid-template-columns: 1fr;
+        /* grid-template-columns: 1fr 1fr; */
+        /* grid-column-gap: 0; */
+        grid-template-rows: 1fr 0.5fr 1fr 1fr;
+        grid-column-gap: 2px;
+        padding: 0;
+    }
+
+    .col{
+        height: 40vh;
+        border-radius: 0px;
+    }
+
+    .one{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+        /* text-align: center; */
+        padding: 0;
+    }
+
+    .one .text{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .one .text h1{
+        font-size: 50px;
+        text-align: center;
+        font-weight: 600;
+        line-height: 1em;
+        width: 100%;
+        color: #170a22;
+        /* border: 2px solid red; */
+    }
+    .one .text p{
+        font-size: 12px;
+        padding: 0 1em;
+    }
+    
+}
+
+.footer{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2em;
+}
+.icons{
+    display: flex;
+}
+
+.unique{
+    font-size: 11px;
+    font-family: 'Clash Display', sans-serif;
+    font-weight: 600;
+}
+@media (min-width: 350px) and (max-width: 800px){
+    footer{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 0;
+
+    }
+    .unique{
+        font-size: 8px;
+    }
+}
